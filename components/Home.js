@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, TextInput} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 
 
 import Titulo from './Titulo'
@@ -35,10 +35,12 @@ const Home = () => {
     return(
         <View style={styles.container}>
             <Titulo />
-            <ListaComics comicsIniciales={comicsIniciales}/>
             <View>
-                
+                <TouchableOpacity styles={styles.addButton}>
+                    <Text style={styles.buttonText}> Añadir nuevo comic </Text>
+                </TouchableOpacity>
             </View>
+            <ListaComics comicsIniciales={comicsIniciales}/>
         </View>
     )
 }
@@ -48,6 +50,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#000000',
         height: '100%',
         width: '100%'
+    },
+    addButton:{
+        width: 60,
+        height: 60,
+    },
+    buttonText:{
+        color:'black',
+        backgroundColor: 'white',
+        borderRadius: 30,
+        marginLeft: 120,
+        width: '36%'
     }
 })
 
