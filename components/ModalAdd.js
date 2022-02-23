@@ -8,7 +8,7 @@ import {
   TextInput,
 } from "react-native";
 
-import { AntDesign } from '@expo/vector-icons'; 
+import { AntDesign,MaterialIcons} from '@expo/vector-icons'; 
 
 const ModalAdd = ({inputTextComic,
                    setInputTextComic,
@@ -18,6 +18,8 @@ const ModalAdd = ({inputTextComic,
                    setAddModalVisibility,
                    handleAddComic
                 }) => {
+
+    
 
 
     const handleComic = () => {
@@ -41,7 +43,7 @@ const ModalAdd = ({inputTextComic,
     <>
       <View style={styles.container}>
         <TouchableOpacity style={styles.radius} onPress={() => setAddModalVisibility(true)}>
-          <Text style={styles.buttonText}> Añadir nuevo comic </Text>
+            <MaterialIcons name="my-library-add" size={40} color="white" />
         </TouchableOpacity>
       </View>
 
@@ -90,6 +92,7 @@ const ModalAdd = ({inputTextComic,
 const styles = StyleSheet.create({
   touchableBtn:{
       paddingLeft: 30,
+      
   },
   textInput:{
       backgroundColor:'white',
@@ -111,32 +114,34 @@ const styles = StyleSheet.create({
     paddingRight: 100,
     paddingBottom: 30,
     backgroundColor:'#544545',
-    borderRadius: 30
+    borderRadius: 30,
+    
   },
   containerButton: {
     flexDirection: "row",
     alignItems: "center",
     marginLeft: 50,
     paddingTop: 15,
+    
   },
   containerModal: {
     paddingTop: "20%",
     alignItems: "center",
+    
   },
   container: {
-    paddingLeft: "40%",
-    paddingRight: "50%",
-  },
-  radius: {
-    backgroundColor: "white",
+    paddingLeft: "49%",
+    
   },
   buttonText: {
     borderRadius: 5,
+    backgroundColor: 'white',
     alignItems: "center",
     color: "black",
     width: 120,
     height: 20,
   },
 });
+
 
 export default ModalAdd;

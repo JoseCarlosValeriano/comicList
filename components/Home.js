@@ -61,6 +61,15 @@ const Home = () => {
     }
 
 
+    const handleDelete = (rowKey) => {
+        const todosComics = [...listaComics];
+        const comicIndex = listaComics.findIndex((comic) => comic.key === rowKey);
+        todosComics.splice(comicIndex,1);
+        setListaComics(todosComics)
+        
+    }
+
+
 
     return(
         <View style={styles.container}>
@@ -89,7 +98,7 @@ const Home = () => {
             <ListaComics
              listaComics={listaComics}
              handleEdit={handleEdit}
-             
+             handleDelete={handleDelete}
             />
         </View>
     )

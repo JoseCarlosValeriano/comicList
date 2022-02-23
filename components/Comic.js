@@ -2,7 +2,7 @@ import React from "react";
 import { Image, Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-const Comic = ({ itemData, handleEdit }) => {
+const Comic = ({ itemData, handleEdit,handleDelete }) => {
   return (
     <View style={styles.viewContainer}>
       <Image
@@ -15,7 +15,7 @@ const Comic = ({ itemData, handleEdit }) => {
         <TouchableOpacity onPress={() => handleEdit(itemData.item)}>
           <AntDesign name="edit" size={30} color="white" style={styles.touchbttn}/>
         </TouchableOpacity>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => handleDelete(itemData.item.key)}>
           <AntDesign name="delete" size={30} color="red" />
         </TouchableOpacity>
       </View>
